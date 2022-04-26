@@ -1,0 +1,42 @@
+{
+  "name": "usmr",
+  "version": "1.0.0",
+  "description": "MERN Stack Application Development Tutorial",
+  "main": "server.ts",
+  "scripts": {
+    "start": "nodemon usmr-backend/server.ts",
+    "buid": "tsc --project ./tsconfig.json",
+    "client": "npm start --prefix usmr-frontend",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
+    "test": "jest --config ./jest.config.json --verbose",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "author": "\"Navid Ansari\"",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.24",
+    "body-parser": "^1.19.2",
+    "concurrently": "^7.0.0",
+    "dayjs": "^1.11.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-openapi": "^11.0.0",
+    "mongoose": "^6.2.2",
+    "mongoose-double": "0.0.1",
+    "nodemon": "^2.0.15",
+    "pino": "^7.9.2",
+    "pino-pretty": "^7.6.0",
+    "react-select": "^5.2.2",
+    "supertest": "^6.2.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@jest-mock/express": "^1.4.5",
+    "jest": "^27.5.1"
+  }
+}
