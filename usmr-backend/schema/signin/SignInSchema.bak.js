@@ -9,4 +9,4 @@ const SignInSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('SignInModel', SignInSchema, "USERS");
+module.exports = mongoose.model('SignInModel', SignInSchema, 'USERS')

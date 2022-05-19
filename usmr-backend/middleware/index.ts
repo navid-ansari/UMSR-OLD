@@ -1,3 +1,3 @@
-import { validateReq, LoggerMiddleware } from "./validate-request";
+import { validateReq, LoggerMiddleware } from './validate-request'
 
-export { validateReq, LoggerMiddleware };
+export { validateReq, LoggerMiddleware }

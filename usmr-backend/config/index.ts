@@ -1,3 +1,3 @@
-import { connectDB } from "./db.config";
+import { connectDB } from './db.config'
 
-export { connectDB };
+export { connectDB }

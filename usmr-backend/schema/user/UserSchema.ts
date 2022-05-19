@@ -1,47 +1,29 @@
-import mongoose, { Schema, model, connect } from "mongoose";
+import mongoose, { Schema, model, connect, Types } from 'mongoose'
 
-import { IUser, IRole } from "../../model";
+import { IUser, IRole } from '../../model'
 
-//const Schema = mongoose.Schema;
-
-// Typescript Schema
 const UserSchema = new Schema<IUser>({
-  _id: {
-    type: String,
-  },
   username: {
-    type: String,
+    type: String
   },
   email: {
-    type: String,
+    type: String
   },
   fname: {
-    type: String,
+    type: String
   },
   lname: {
-    type: String,
+    type: String
   },
   dob: {
-    type: String,
+    type: String
   },
   password: {
-    type: String,
+    type: String
   },
   role: {
-    type: [
-      {
-        value: {
-          type: String,
-        },
-        label: {
-          type: String,
-        },
-        code: {
-          type: Number,
-        },
-      },
-    ],
-  },
-});
+    type: []
+  }
+})
 
-module.exports = mongoose.model<IUser>("UserModel", UserSchema, "USERS");
+module.exports = mongoose.model<IUser>('UserModel', UserSchema, 'USERS')

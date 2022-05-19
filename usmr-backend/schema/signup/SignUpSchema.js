@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 const SignupSchema = new Schema({
     username: {
@@ -24,6 +24,6 @@ const SignupSchema = new Schema({
     role: {
         type: Array
     }
-});
+})
 
-module.exports = mongoose.model("SignupModel", SignupSchema, "USERS");
+module.exports = mongoose.model('SignupModel', SignupSchema, 'USERS')

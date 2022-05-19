@@ -1,25 +1,33 @@
-import bagStore from "../store/bag.store";
-import shopStore from "../store/shop.store";
+import bagStore from '../store/bag.store'
+import shopStore from '../store/shop.store'
 
-export default ({ bagStore, shopStore } : any) => ({
-  createBag: async () => {return null},
-  createSubscriptionBag: async () => {return null},
-  fetchBag: async(id: string, locale: string) => {
-    const ctLocale = "America/New_York";
-    const bag = await shopStore.getBagById(id, ctLocale);
-    return setFulfillingShopInfo(bag, shopStore); 
-  },
-  updateBag: async () => { return null },
-  fetchTimeslotFromBag: async () => { return null }
-});
+export default ({ bagStore, shopStore }: any) => ({
+    createBag: async () => {
+        return null
+    },
+    createSubscriptionBag: async () => {
+        return null
+    },
+    fetchBag: async (id: string, locale: string) => {
+        const ctLocale = 'America/New_York'
+        const bag = await shopStore.getBagById(id, ctLocale)
+        return setFulfillingShopInfo(bag, shopStore)
+    },
+    updateBag: async () => {
+        return null
+    },
+    fetchTimeslotFromBag: async () => {
+        return null
+    }
+})
 
 export const setFulfillingShopInfo = async (bag: any, shopStore: any) => {
-  if(bag.orderDetails?.fulfillingShopId) {
-    bag.orderDetails.fulfillingShopName = "Pret-Church Street"
-    bag.orderDetails.fulfillingShopAddress = "New York, USA"
-    bag.orderDetails.fulfillingShopTimeZone = "America/New_York"
-  }
-  return bag
+    if (bag.orderDetails?.fulfillingShopId) {
+        bag.orderDetails.fulfillingShopName = 'Pret-Church Street'
+        bag.orderDetails.fulfillingShopAddress = 'New York, USA'
+        bag.orderDetails.fulfillingShopTimeZone = 'America/New_York'
+    }
+    return bag
 }
 /**
  * createBag: async (

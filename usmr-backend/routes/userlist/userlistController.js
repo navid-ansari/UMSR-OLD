@@ -1,15 +1,15 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
 // schema
 //const UserList = require('../schema/details/details');
 // const UserListSchema = require('../schema/userlist/UserList');
-const UserSchema = require("../../schema/user/UserSchema");
+const UserSchema = require('../../schema/user/UserSchema')
 
 router.use((req, res, next) => {
-  console.log("Time: ", Date.now());
-  next();
-});
+    console.log('Time: ', Date.now())
+    next()
+})
 
 /*router.get("/", (req, res) => {
   // res.send('Details Homepage');
@@ -24,27 +24,29 @@ router.use((req, res, next) => {
   });
 });*/
 
-router.get("/allUser", (req, res) => {
-  //res.send('All User Homepage');
-  UserSchema.find({}, (err, users) => {
-    if (err) {
-      res
-        .status(500)
-        .json({
-          success: false,
-          error: err,
-          message: "Error in Fetch All User Query.",
-        });
-    } else if (users.length == 0) {
-      res
-        .status(200)
-        .json({ success: true, data: users, message: "No Records Found" });
-    } else if (users.length > 0) {
-      res
-        .status(200)
-        .json({ success: true, data: users, message: "User List." });
-    }
-  });
-});
+router.get('/allUser', (req, res) => {
+    //res.send('All User Homepage');
+    UserSchema.find({}, (err, users) => {
+        if (err) {
+            res.status(500).json({
+                success: false,
+                error: err,
+                message: 'Error in Fetch All User Query.'
+            })
+        } else if (users.length == 0) {
+            res.status(200).json({
+                success: true,
+                data: users,
+                message: 'No Records Found'
+            })
+        } else if (users.length > 0) {
+            res.status(200).json({
+                success: true,
+                data: users,
+                message: 'User List.'
+            })
+        }
+    })
+})
 
-module.exports = router;
+module.exports = router
